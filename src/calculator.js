@@ -4,46 +4,31 @@ class Calculator{
             return 0;
        }else{
         let numArr=['1','2','3','4','5','6','7','8','9','0'];
-        let delims=['\n',','];
-        // if(numArr.includes(numbers[0])){
-        //     console.log('runs');
-        //     let num=numbers.split(',');
-        //     let sum=0;
-        //     let len=num.length;
-        //     for(let index=0;index<len;index++){
-        //         sum+=parseInt(num[index]);
-        //     }
-            
-        //     return sum;
-        // }
         var test=[];
         var len=numbers.length;
-        console.log(`len: ${len}`);
-        numbers=numbers.replace(/\n/g,',');
-        for(let i=0;i<len;i++){
-         
+        var sum=0;
+        var len2=0;
+        var currentVal=0;
+        
+        //negative numbers
+        if(numbers.includes("-")){
+            
+        }
+        for(let i=0;i<len;i++){ 
             if(numArr.includes(numbers[i])){
               test.push(numbers[i]);
                
             }
-           
-
         }
- 
-        console.log(test);
-     
-        if(numbers.includes('\n')){
-         
-            let num=numbers.split(/[\n,]/);
-            let sum=0;
-            let len=num.length;
-          
-            for(let index=0;index<len;index++){
-                sum+=parseInt(num[index]);
+        var len2=test.length;
+  //console.log(typeof(parseInt(test[0])));     
+        for(let index=0;index<len2;index++){
+            currentVal=parseInt(test[index]);
+            if(currentVal<1001){
+                sum+=currentVal;
             }
-            return sum;
         }
-        
+        return sum;
         
        }
     }
